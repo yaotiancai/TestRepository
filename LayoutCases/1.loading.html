@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background: #000;
+        }
+
+        .circleWrapper {
+            width: 50px;
+            height: 50px;
+            /* border: 1px solid #ccc; */
+            border-radius: 4px;
+            margin: 0;
+            padding: 0;
+            transform: rotate(360deg);
+            transition: all 1s;
+        }
+
+        .circle1 {
+            width: 50px;
+            height: 50px;
+            /* border: 1px solid red; */
+            margin: 0;
+            padding: 0;
+            position: absolute;
+        }
+
+        .circle2 {
+            width: 50px;
+            height: 50px;
+            /* border: 1px solid red; */
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            transform: rotate(45deg);
+        }
+
+        .spot {
+            display: inline-block;
+            background-color: #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            /* animation:
+             animation-name动画名称，和keyframes定义的动画名称相对应
+             animation-duration持续时间  
+             animation-timing-functionn动画曲线(
+                ease: 默认。动画以低速开始，然后加快，在结束前变慢
+                linear:	动画从头到尾的速度是相同的
+                ease-in: 动画以低速开始
+                ease-out: 动画以低速结束
+                ease-in-out: 动画以低速开始和结束
+                cubic-bezier(n,n,n,n): 在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值
+            )
+             animation-delay播放延迟  
+             animation-iteration-count播放次数(
+                n:次数
+                infinite: 无限循环
+             )
+             animation-direction是否轮流反向播放(
+                noraml: 正常播放
+                alternate: 轮流反向播放
+             )
+            */
+            animation: identifier 1s linear infinite alternate;
+        }
+
+        .circle1 .spot:nth-of-type(1) {
+            top: 0;
+            left: 0;
+            animation-delay: -0.125s;
+        }
+
+        .circle1 .spot:nth-of-type(2) {
+            top: 0;
+            right: 0;
+            animation-delay: -0.375s;
+        }
+
+        .circle1 .spot:nth-of-type(3) {
+            bottom: 0;
+            left: 0;
+            animation-delay: -0.625s;
+        }
+
+        .circle1 .spot:nth-of-type(4) {
+            bottom: 0;
+            right: 0;
+            animation-delay: -0.875s;
+        }
+
+        .circle2 .spot:nth-of-type(1) {
+            top: 0;
+            left: 0;
+            animation-delay: -0.250s;
+        }
+
+        .circle2 .spot:nth-of-type(2) {
+            top: 0;
+            right: 0;
+            animation-delay: -0.5s;
+        }
+
+        .circle2 .spot:nth-of-type(3) {
+            bottom: 0;
+            left: 0;
+            animation-delay: -0.75s;
+        }
+
+        .circle2 .spot:nth-of-type(4) {
+            bottom: 0;
+            right: 0;
+            animation-delay: -1s;
+        }
+
+        /*  n%
+            from&to 
+        */
+        @keyframes identifier {
+            0% {
+                transform: scale(0)
+            }
+
+            50% {
+                transform: scale(1)
+            }
+
+            100% {
+                transform: scale(0)
+            }
+        }
+    </style>
+
+<body>
+    <div class="circleWrapper">
+        <div class="circle1">
+            <span class="spot"></span>
+            <span class="spot"></span>
+            <span class="spot"></span>
+            <span class="spot"></span>
+        </div>
+        <div class="circle2">
+            <span class="spot"></span>
+            <span class="spot"></span>
+            <span class="spot"></span>
+            <span class="spot"></span>
+        </div>
+    </div>
+</body>
+
+</html>
