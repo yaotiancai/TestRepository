@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RotateTaiji</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background: #f0f0f0;
+    }
+
+    .taijiWrapper {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        border: 4px solid #000;
+        animation: rotate 2s linear infinite;
+        overflow: hidden;
+        display: flex;
+        /* box-shadow 阴影(
+            offset-x: 水平阴影
+            offset-y: 垂直阴影
+            blur-radius: 模糊半径，不可为负数
+            spread-radius: 扩散半径 ，正外里内
+            color: 颜色
+        ) */
+        box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    .semicircle1 {
+        width: 200px;
+        height: 400px;
+        background: #000;
+        position: relative;
+        overflow: visible;
+    }
+
+    .semicircle2 {
+        width: 200px;
+        height: 400px;
+        background: #fff;
+        position: relative;
+        overflow: visible;
+    }
+
+    .semicircle1 .circle {
+        width: 200px;
+        height: 200px;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        right: -100px;
+        border-radius: 50%;
+        z-index: 2;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .semicircle2 .circle {
+        width: 200px;
+        height: 200px;
+        background: #000;
+        position: absolute;
+        bottom: 0;
+        left: -100px;
+        border-radius: 50%;
+        z-index: 2;
+        overflow: visible;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .semicircle1 .circle .littlecircle {
+        width: 70px;
+        height: 70px;
+        background: #000;
+        border-radius: 50%;
+        z-index: 3;
+    }
+
+    .semicircle2 .circle .littlecircle {
+        width: 70px;
+        height: 70px;
+        background: #fff;
+        border-radius: 50%;
+        z-index: 3;
+    }
+
+    @keyframes rotate {
+
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+
+        /* 0% {
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+
+        100% {
+            transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        } */
+    }
+</style>
+
+<body>
+    <div class="taijiWrapper">
+        <div class="semicircle1">
+            <div class="circle">
+                <div class="littlecircle"></div>
+            </div>
+        </div>
+        <div class="semicircle2">
+            <div class="circle">
+                <div class="littlecircle"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
