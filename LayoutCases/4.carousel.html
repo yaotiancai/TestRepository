@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background: #f0f0f0;
+    }
+
+    .carouselWrap {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        border: 1px solid #000;
+    }
+
+    .imageWrap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .imageWrap img {
+        /* object-fit 可以解决img元素变形问题 ,需要和宽高搭配使用，说明图片需要显示的大小(
+            fill: 中文释义“填充”。默认值。替换内容拉伸填满整个content box, 不保证保持原有的比例。
+            contain: 中文释义“包含/控制”。保持原有尺寸比例。保证替换内容尺寸一定可以在容器里面放得下。因此，此参数可能会在容器内留下空白。
+            cover: 中文释义“覆盖”。保持原有尺寸比例。保证替换内容尺寸一定大于容器尺寸，宽度和高度至少有一个和容器一致。因此，此参数可能会让替换内容（如图片）部分区域不可见。
+            none: 中文释义“无”。保持原有尺寸比例。同时保持替换内容原始尺寸大小。
+            scale-down: 中文释义“降低”。就好像依次设置了none或contain, 最终呈现的是尺寸比较小的那个。
+        ) */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .pageWrap {
+        width: 200px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        right: 0;
+        bottom: 10px;
+    }
+
+    .pageWrap .page {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ccc;
+        background-color: rgba(0, 0, 0, .3);
+        color: #fff;
+        border-radius: 3px;
+        text-decoration: none;
+    }
+
+    .pageWrap .page:hover {
+        background-color: rgba(0, 0, 0, .5);
+    }
+</style>
+
+<body>
+    <div class="carouselWrap">
+        <div class="imageWrap">
+            <img src="./images/pic1.png" alt="" id="pic1">
+            <img src="./images/pic2.jpg" alt="" id="pic2">
+            <img src="./images/pic3.jpg" alt="" id="pic3">
+            <img src="./images/pic4.jpg" alt="" id="pic4">
+        </div>
+        <div class="pageWrap">
+            <!-- 锚点链接(
+                a标签href="#+要定位到元素的ID"
+            ) -->
+            <a class="page" href="#pic1">
+                1
+            </a>
+            <a class="page" href="#pic2">
+                2
+            </a>
+            <a class="page" href="#pic3">
+                3
+            </a>
+            <a class="page" href="#pic4">
+                4
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
