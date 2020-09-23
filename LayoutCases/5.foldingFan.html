@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoldingFan</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      background: #f0f0f0;
+    }
+
+    .fanWrap {
+      position: relative;
+      width: 600px;
+      height: 230px;
+      border-bottom: 2px solid #000;
+    }
+
+    .fan {
+      width: 60px;
+      height: 200px;
+      background-color: orange;
+      position: absolute;
+      bottom: 40px;
+      left: 240px;
+      /* border-radius: 3px; */
+      text-align: center;
+      transform-origin: center bottom;
+      transition: all 1s linear;
+      box-shadow: 3px 3px 5px #333;
+      opacity: 0;
+    }
+
+    .fan:nth-of-type(1) {
+      opacity: 1;
+      background-color: red;
+    }
+
+    .fan:nth-of-type(2) {
+      background-color: oranyellowgered;
+    }
+
+    .fan:nth-of-type(3) {
+      background-color: green;
+    }
+
+    .fan:nth-of-type(4) {
+      background-color: blue;
+    }
+
+    .fan:nth-of-type(5) {
+      background-color: pink;
+    }
+
+    .fan:nth-of-type(6) {
+      background-color: gray;
+    }
+    .fan:nth-of-type(7) {
+      background-color: orange;
+    }
+
+    .fan:nth-of-type(8) {
+      background-color: orange;
+    }
+    .fan:nth-of-type(9) {
+      background-color: gray;
+    }
+
+    .fan:nth-of-type(10) {
+      background-color: pink;
+    }
+    .fan:nth-of-type(11) {
+      background-color: blue;
+    }
+
+    .fan:nth-of-type(12) {
+      background-color: green;
+    }
+    .fan:nth-of-type(13) {
+      background-color: orangered;
+    }
+
+    .fanWrap:hover .fan:nth-of-type(2) {
+      transform: rotateZ(15deg);
+      opacity: 1;
+    }
+    .fanWrap:hover .fan:nth-of-type(3) {
+      transform: rotateZ(30deg);
+      opacity: 1;
+    }
+    .fanWrap:hover .fan:nth-of-type(4) {
+      transform: rotateZ(45deg);
+      opacity: 1;
+    }
+    .fanWrap:hover .fan:nth-of-type(5) {
+      transform: rotateZ(60deg);
+      opacity: 1;
+    }
+    .fanWrap:hover .fan:nth-of-type(6) {
+      transform: rotateZ(75deg);
+      opacity: 1;
+    }
+    .fanWrap:hover .fan:nth-of-type(7) {
+      transform: rotateZ(90deg);
+      opacity: 1;
+    }
+    .fanWrap:hover .fan:nth-of-type(8) {
+      transform: rotateZ(-90deg);
+      opacity: 1;
+    }
+    .fanWrap:hover .fan:nth-of-type(9) {
+      transform: rotateZ(-75deg);
+      opacity: 1;
+    }
+    .fanWrap:hover .fan:nth-of-type(10) {
+      transform: rotateZ(-60deg);
+      opacity: 1;
+    }
+    .fanWrap:hover .fan:nth-of-type(11) {
+      transform: rotateZ(-45deg);
+      opacity: 11;
+    }
+    .fanWrap:hover .fan:nth-of-type(12) {
+      transform: rotateZ(-30deg);
+      opacity: 12;
+    }
+    .fanWrap:hover .fan:nth-of-type(13) {
+      transform: rotateZ(-15deg);
+      opacity: 13;
+    }
+  </style>
+
+  <body>
+    <div class="fanWrap">
+      <div class="fan">1</div>
+      <div class="fan">2</div>
+      <div class="fan">3</div>
+      <div class="fan">4</div>
+      <div class="fan">5</div>
+      <div class="fan">6</div>
+      <div class="fan">7</div>
+      <div class="fan">2</div>
+      <div class="fan">3</div>
+      <div class="fan">4</div>
+      <div class="fan">5</div>
+      <div class="fan">6</div>
+      <div class="fan">7</div>
+    </div>
+  </body>
+</html>
