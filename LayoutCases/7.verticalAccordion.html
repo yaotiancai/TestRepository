@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VerticalAccordion</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        height: 100%;
+      }
+
+      body {
+        /* height: 100%; */
+        background: #f0f0f0;
+      }
+
+      .accordingWrap {
+        margin: 100px auto;
+        position: relative;
+        width: 600px;
+        /* border: 1px solid #000; */
+      }
+
+      .item {
+        margin-bottom: 20px;
+      }
+
+      .title {
+        height: 50px;
+        background: linear-gradient(#cecece, #8f8f8f);
+        border-radius: 5px;
+        line-height: 50px;
+        padding-left: 10px;
+        text-decoration: none;
+        display: block;
+        color: #000;
+        transition: 0.3s;
+        position: relative;
+      }
+
+      .icon {
+        display: inline-block;
+        height: 0px;
+        width: 0px;
+        border: 5px solid #fff;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        transition: 0.3s;
+      }
+      .content {
+        height: 0px;
+        overflow: auto;
+        padding-left: 10px;
+        transition: 0.3s;
+      }
+
+      .title:hover {
+        background: linear-gradient(#6bb2ff, #2288dd);
+        color: #fff;
+      }
+
+      /* :target 突出显示活动的HTML锚，与:not(:target)相对立 */
+
+      /* 具体被激活的那个id为啥的元素 */
+      /* #dufu:target .title {
+        background: linear-gradient(#6bb2ff, #2288dd);
+        color: #fff;
+      } */
+
+      /* 被激活的那个类名为啥的元素 */
+      /* .item:target .title {
+        background: linear-gradient(#6bb2ff, #2288dd);
+        color: #fff;
+      } */
+
+      /* 被激活的那一个元素 */
+      :target .title {
+        background: linear-gradient(#6bb2ff, #2288dd);
+        color: #fff;
+      }
+
+      .item:target .icon {
+        top: 25px;
+        border: 5px solid #fff;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+      }
+
+      .item:target .content {
+        height: 100px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="accordingWrap">
+      <div class="item" id="libai">
+        <a class="title" href="#libai">
+          李白
+          <span class="icon"></span>
+        </a>
+        <div class="content">
+          长安元年（701年），李白，字太白。其生地今一般认为是唐剑南道绵州（巴西郡）昌隆（后避玄宗讳改为昌明）青莲乡。祖籍为甘肃天水。其家世、家族皆不详。
+          神龙元年（705年），
+          十一月，武则天去世。李白五岁。发蒙读书始于是年。《上安州裴长史书》云:“五岁诵六甲。”六甲，唐代的小学识字课本，长史，州之次官。
+          开元三年（715年），李白十五岁。已有诗赋多首，并得到一些社会名流的推崇与奖掖，开始从事社会干谒活动。亦开始接受道家思想的影响，好剑术，喜任侠。是年岑参生。
+          开元六年（718年），李白十八岁。隐居戴天大匡山（在今四川省江油市内）读书。往来于旁郡，先后出游江油、剑阁、梓州（州治在今四川省境内）等地，增长了不少阅历与见识。
+        </div>
+      </div>
+      <div class="item" id="dufu">
+        <a class="title" href="#dufu">
+          杜甫
+          <span class="icon"></span>
+        </a>
+        <div class="content">
+          杜甫（712年—770年），字子美，自号少陵野老，唐代伟大的现实主义诗人，与李白合称“李杜”。出生于河南巩县，原籍湖北襄阳。
+          [1-2]
+          为了与另两位诗人李商隐与杜牧即“小李杜”区别，杜甫与李白又合称“大李杜”，杜甫也常被称为“老杜”。
+          [1]
+          杜甫少年时代曾先后游历吴越和齐赵，其间曾赴洛阳应举不第。三十五岁以后，先在长安应试，落第；后来向皇帝献赋，向贵人投赠。官场不得志，亲眼目睹了唐朝上层社会的奢靡与社会危机。天宝十四载（755年），安史之乱爆发，潼关失守，杜甫先后辗转多地。乾元二年（759年）杜甫弃官入川，虽然躲避了战乱，生活相对安定，但仍然心系苍生，胸怀国事。杜甫创作了《登高》《春望》《北征》以及“三吏”、“三别”等名作。虽然杜甫是个现实主义诗人，但他也有狂放不羁的一面，从其名作《饮中八仙歌》不难看出杜甫的豪气干云。
+          杜甫的思想核心是仁政思想，他有“致君尧舜上，再使风俗淳”的宏伟抱负。杜甫虽然在世时名声并不显赫，但后来声名远播，对中国文学和日本文学都产生了深远的影响。杜甫共有约1500首诗歌被保留了下来，大多集于《杜工部集》。
+          [3] 大历五年（770年）冬，杜甫病逝，时年五十九岁。杜甫在中国古
+        </div>
+      </div>
+      <div class="item" id="baijvyi">
+        <a class="title" href="#baijvyi">
+          白居易
+          <span class="icon"></span>
+        </a>
+        <div class="content">
+          白居易（772年－846年），字乐天，号香山居士，又号醉吟先生，祖籍山西太原
+          [1-2] ，到其曾祖父时迁居下邽，生于河南新郑。 [3]
+          是唐代伟大的现实主义诗人，唐代三大诗人之一。白居易与元稹共同倡导新乐府运动，世称“元白”，与刘禹锡并称“刘白”。
+          [4]
+          白居易的诗歌题材广泛，形式多样，语言平易通俗，有“诗魔”和“诗王”之称。官至翰林学士、左赞善大夫。公元846年，白居易在洛阳逝世，葬于香山。有《白氏长庆集》传世，代表诗作有《长恨歌》《卖炭翁》《琵琶行》等。
+          1988年，日本中国文化显彰会为白园捐立石碑，以纪念白居易，碑文用中、日两种文字书写。1995年，4个日本人于此上书“樱献”。
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
