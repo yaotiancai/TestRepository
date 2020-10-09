@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThreeLevelMenus</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background: #f0f0f0;
+    }
+
+    ol {
+        list-style: none;
+    }
+
+    .level1Box {
+        /* width: 600px; */
+        background: #fff;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 40px;
+    }
+
+    .level1 {
+        background: yellow;
+        padding: 10px 30px;
+        position: relative;
+    }
+
+    .level1:hover {
+        background: skyblue;
+        color: tomato;
+    }
+
+    .level1:hover .level2Box {
+        display: block;
+    }
+
+    .level2Box {
+        top: 40px;
+        left: 0;
+        display: none;
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .level2 {
+        padding: 10px 30px;
+        background: #ccc;
+        position: relative;
+    }
+
+    .level2:hover {
+        background: #888;
+        color: #fff;
+    }
+
+    .level2:hover .level3Box {
+        display: block;
+    }
+
+    .level3Box {
+        top: 0px;
+        left: 127px;
+        display: none;
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .level3 {
+        padding: 10px 30px;
+        background: #ddd;
+    }
+
+    .level3:hover {
+        background: #777;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <ol class="level1Box">
+        <li class="level1">
+            一级菜单
+            <ol class="level2Box">
+                <li class="level2">二级菜单
+                    <ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li class="level1">
+            一级菜单
+            <ol class="level2Box">
+                <li class="level2">二级菜单
+                    <ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li class="level1">
+            一级菜单
+            <ol class="level2Box">
+                <li class="level2">二级菜单
+                    <ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+        <li class="level1">
+            一级菜单
+            <ol class="level2Box">
+                <li class="level2">二级菜单
+                    <ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+                <li class="level2">二级菜单<ol class="level3Box">
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                        <li class="level3">三级菜单</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</body>
+
+</html>
