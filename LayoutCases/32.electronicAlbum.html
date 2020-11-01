@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电子相册</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background: #f0f0f0;
+    }
+
+    .albumBox {
+        width: 600px;
+        height: 400px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .banner {
+        width: 400px;
+        height: 300px;
+        background: #ccc;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+
+    .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 6px;
+    }
+
+    .thumbnail {
+        width: 200px;
+        height: 400px;
+        background: #ddd;
+        overflow: auto;
+        padding: 5px;
+    }
+
+    .thumbnail img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        margin-bottom: 5px;
+    }
+</style>
+
+<body>
+    <div class="albumBox">
+        <div class="banner">
+            <img src="./images/pic1.png" alt="" id="pic1">
+            <img src="./images/pic2.jpg" alt="" id="pic2">
+            <img src="./images/pic3.jpg" alt="" id="pic3">
+            <img src="./images/pic4.jpg" alt="" id="pic4">
+        </div>
+        <div class="thumbnail">
+            <a href="#pic1">
+                <img src="./images/pic1.png" alt="">
+            </a>
+            <a href="#pic2">
+                <img src="./images/pic2.jpg" alt="">
+            </a>
+            <a href="#pic3">
+                <img src="./images/pic3.jpg" alt="">
+            </a>
+            <a href="#pic4">
+                <img src="./images/pic4.jpg" alt="">
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

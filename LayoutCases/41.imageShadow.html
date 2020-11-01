@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片立体阴影效果</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      background: #ffcccc;
+    }
+
+    .imgWrapper {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      /* box-shadow: 0px 20px 15px rgba(0, 0, 0, 1); */
+      border: 20px solid #fff;
+    }
+
+    .imgWrapper img {
+      width: 100%;
+      height: 100%;
+    }
+
+    /*伪元素   https://www.cnblogs.com/wonyun/p/5807191.html */
+
+    .imgWrapper:after {
+      position: absolute;
+      top: 85px;
+      z-index: -1;
+      display: block;
+      width: 400px;
+      height: 200px;
+      /* border: 20px solid #fff; */
+      background: rgba(0, 0, 0, 0.7);
+      /* 伪元素内容 必填项，否则不生效   string/attr(主元素的某个属性名)/url()、uri()外部资源/counter()计数器*/
+      content: "";
+      box-shadow: 0px 20px 15px rgba(0, 0, 0, 1);
+      /* 倾斜 */
+      transform: skewY(10deg);
+    }
+
+    .imgWrapper:before {
+      position: absolute;
+      top: 85px;
+      z-index: -1;
+      display: block;
+      width: 400px;
+      height: 200px;
+      /* border: 20px solid #fff; */
+      background: rgba(0, 0, 0, 0.7);
+      content: "";
+      box-shadow: 0px 20px 15px rgba(0, 0, 0, 1);
+      transform: skewY(-10deg);
+    }
+  </style>
+
+  <body>
+    <div class="imgWrapper">
+      <img src="./images/pic3.jpg" alt="" id="pic3" />
+    </div>
+  </body>
+</html>
