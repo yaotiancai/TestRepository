@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片3D翻转效果</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      /* background: #f0f0f0; */
+    }
+    .box {
+      perspective: 1200px;
+      position: relative;
+    }
+
+    .imgWrapper {
+      width: 400px;
+      height: 300px;
+      transition: all 1s;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+      transform-style: preserve-3d;
+    }
+
+    .imgWrapper:hover {
+      transform: rotateY(180deg);
+    }
+
+    .imgWrapper img {
+      width: 100%;
+      height: 100%;
+    }
+
+    /*伪元素   https://www.cnblogs.com/wonyun/p/5807191.html */
+
+    p {
+      position: absolute;
+      top: 0px;
+      width: 400px;
+      height: 300px;
+      /* border: 20px solid #fff; */
+      background: rgba(0, 0, 0, 0.2);
+      transform: rotateY(180deg);
+    }
+  </style>
+
+  <body>
+    <div class="box">
+      <div class="imgWrapper">
+        <img src="./images/pic3.jpg" alt="" id="pic3" />
+        <p></p>
+      </div>
+    </div>
+  </body>
+</html>
