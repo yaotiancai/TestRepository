@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 4. 判断素数
+      // let num = +prompt("数字");
+      // const fn = (num) => {
+      //   let flag = [...new Array(num).keys()]
+      //     .slice(2)
+      //     .some((item) => num % item === 0);
+      //   console.info([...new Array(num).keys()].slice(2));
+      //   if (num === 1 || num === 0) flag = true;
+      //   return num + ["不", ""][+!flag] + "是素数";
+      // };
+      // alert(fn(num));
+
+      // 5. 计算 100—200之间所有素数的和
+      // const fn = (num) => {
+      //   let flag = [...new Array(num).keys()]
+      //     .slice(2)
+      //     .some((item) => num % item === 0);
+      //   if (num === 1 || num === 0) flag = true;
+      //   return !flag;
+      // };
+
+      // const fn2 = () => {
+      //   let sum = [...new Array(200).keys()].slice(100).reduce((s, item) => {
+      //     if (fn(item)) {
+      //       console.info(item);
+      //       return s + item;
+      //     }
+      //     return s;
+      //   });
+      //   return "100~200之间素数之和为" + sum;
+      // };
+      // alert(fn2());
+
+      // 6. 100 可以拆成哪两个素数的和
+      // const fn = (num) => {
+      //   let flag = [...new Array(num).keys()]
+      //     .slice(2)
+      //     .some((item) => num % item === 0);
+      //   if (num === 1 || num === 0) flag = true;
+      //   return !flag;
+      // };
+
+      // const fn2 = () => {
+      //   let arr = [...new Array(100).keys()]
+      //     .slice(2)
+      //     .filter((item) => fn(item));
+      //   console.info("arr", arr);
+      //   const result = arr
+      //     .map((item, index) => {
+      //       if (item > 50) return;
+      //       let arrCopy = [...arr];
+      //       arrCopy.splice(index, 1);
+      //       let b = arrCopy.find((t) => {
+      //         return t + item === 100;
+      //       });
+      //       if (b) return item + "和" + b;
+      //     })
+      //     .filter(Boolean);
+      //   console.info("result", result);
+      //   return "100可以拆分为" + result.join(",") + "之和";
+      // };
+      // console.info(fn2());
+
+      // 7. 求某数的阶乘
+      // let num = +prompt("数字");
+      // const fn = (num) => {
+      //   if (num < 1) return "0或负数没有阶乘";
+      //   let arr = [...new Array(num + 1).keys()].slice(1);
+      //   let production = arr.reduce((production, item) => production * item);
+      //   return num + "的阶乘为" + production;
+      // };
+      // console.info(fn(num));
+    </script>
+  </body>
+</html>
