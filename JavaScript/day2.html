@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 2.   普通闰年：n%4===0&&n%100!==0   世纪闰年：n%400===0
+      // let year = +prompt("年份");
+      // let mouth = +prompt("月份");
+      // let day = +prompt("日期");
+      // const fn = (year) => {
+      //   return "星期" + new Date(year + "-" + mouth + "-" + day).getDay();
+      // };
+      // alert(fn(year));
+
+      // 3.  水仙花数   153
+      // 判断某个数是否是水仙花数
+      // let num = +prompt("三位数");
+      // const fn = (num) => {
+      //   let a = parseInt(num / 100);
+      //   let b = parseInt(num / 10) % 10;
+      //   let c = num % 10;
+      //   let flag = a * a * a + b * b * b + c * c * c === num;
+      //   return "该数" + ["不", ""][+flag] + "是水仙花数";
+      // };
+      // console.info(fn(num));
+
+      // 所有的水仙花数有哪些
+      // const fn = () => {
+      //   // 快速创建包含0~xxx-1的数字数组
+      //   let arr = [...new Array(1000).keys()];
+      //   console.info("arr", arr);
+      //   let result = arr
+      //     .filter((item) => {
+      //       let a = parseInt(item / 100);
+      //       let b = parseInt(item / 10) % 10;
+      //       let c = item % 10;
+      //       return a * a * a + b * b * b + c * c * c === item;
+      //     })
+      //     .filter(Boolean);
+      //   return "水仙花数有:" + result.join(",");
+      // };
+      // console.info(fn());
+
+      // 4.	计算某日是该年的第几天?
+      // let year = +prompt("年份");
+      // let mouth = +prompt("月份");
+      // let day = +prompt("日期");
+
+      // const howManyDays = (mouth) => {
+      //   // 匹配多个值，条件随便写
+      //   switch (true) {
+      //     case mouth === 2:
+      //       return 28;
+      //       break;
+      //     case [1, 3, 5, 7, 8, 10, 12].indexOf(mouth) > -1:
+      //       return 31;
+      //       break;
+      //     default:
+      //       return 30;
+      //   }
+      // };
+      // const fn = (year, mouth, day) => {
+      //   // eval直接将字符串装化为表达式
+      //   const num =
+      //     eval(
+      //       [...new Array(mouth).keys()]
+      //         .slice(1)
+      //         .map((item) => howManyDays(item))
+      //         .join("+")
+      //     ) + day;
+      //   return year + "-" + mouth + "-" + day + "是今年的第" + num + "天";
+      // };
+      // console.info(fn(year, mouth, day));
+
+      // 5.随机数出1,2,3中的一个
+      // console.info(Math.ceil(Math.random() * 3));
+    </script>
+  </body>
+</html>
