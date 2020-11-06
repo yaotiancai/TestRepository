@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1.	 函数实现：输出1—3之间能组成的奇数个数，并输出这些数 组成的数是一个两位数，个位数 !== 十位数 13  21   23  31  共4个
+      // const fn = () => {
+      //   let arr = [1, 2, 3];
+      //   let result = [];
+      //   arr.map((item, index) => {
+      //     const arrLast = [...arr];
+      //     arrLast.splice(index, 1);
+      //     result.push(
+      //       arrLast
+      //         .map((t) => {
+      //           if ((item * 10 + t) % 2 === 1) return item * 10 + t;
+      //         })
+      //         .filter(Boolean)
+      //     );
+      //   });
+      //   let results = [];
+      //   result.map((item) => {
+      //     item.forEach((t) => results.push(t));
+      //   });
+      //   console.info("results", results);
+      //   return (
+      //     "一共可以组成" +
+      //     results.length +
+      //     "个奇数，分别是：" +
+      //     results.join(",")
+      //   );
+      //   return;
+      // };
+      // console.info(fn());
+
+      // 2、	编写一个函数，输入n为偶数时，调用函数求1/2+1/4+...+1/n，当输入n为奇数时，调用函数求1+1/3+...+1/n
+      // let num = +prompt("数值");
+      // const fn = (num) => {
+      //   let sum = 0;
+      //   if (num % 2 === 0) {
+      //     let n = num / 2;
+      //     while (n >= 1) {
+      //       sum += 1 / (2 * n);
+      //       n--;
+      //     }
+      //     return sum;
+      //   } else {
+      //     let n = (num + 1) / 2;
+      //     while (n >= 1) {
+      //       sum += 1 / (2 * n - 1);
+      //       n--;
+      //     }
+      //     return sum;
+      //   }
+      // };
+      // console.info(fn(num));
+
+      // 4、如果一个数恰好等于它的因数之和，则称该数为“完全数” perfect number。
+      // 例如：
+      // 第一个完全数是6，它有因数1、2、3、6，除去它本身6外，其余3个数相加，1+2+3=6。第二个完全数是28，它有因数1、2、4、7、14、28，除去它本身28外，其余5个数相加，1+2+4+7+14=28。
+      // 第三个完全数是496，有约数1、2、4、8、16、31、62、124、248、496，除去其本身496外，其余9个数相加，1+2+4+8+16+31+62+124+248=496。
+      // 函数实现：	请列出2~10000的所有完全数
+      // const fn = () => {
+      //   let arr = [...new Array(10001).keys()].slice(1);
+      //   let result = arr
+      //     .map((item, index) => {
+      //       let sum = 0;
+      //       let arr1 = arr.slice(0, index);
+      //       let arr2 = arr1.filter((t) => item % t === 0);
+      //       arr2.map((t) => (sum += t));
+      //       if (sum === item) return item;
+      //     })
+      //     .filter(Boolean);
+      //   console.info("result", result);
+      //   return "2~10000的所有完全数有：" + result.join(",");
+      // };
+      // console.info(fn());
+
+      // 5、编写一个函数 ：实现计算任意一个数的各个位数的和
+      // let num = +prompt("数值");
+      // const fn = (num) => {
+      //   let result = (num + "")
+      //     .split("")
+      //     .reduce((sum, item) => sum - 0 + (item - 0));
+      //   console.info((num + "").split(""));
+      //   return result;
+      // };
+      // console.info(fn(num));
+
+      // 6.递归实现斐波那契数列  输出第m项
+      // 1 1 2 3 5 8 13 .....
+      // 将所有的项化为第0项和第1项
+      // function fb(m) {
+      //   if (m == 1 || m == 2) return 1;
+      //   else return fb(m - 1) + fb(m - 2);
+      // }
+      // console.info(fb(6));
+    </script>
+  </body>
+</html>
