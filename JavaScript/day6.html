@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // https://www.cnblogs.com/hycms/p/9537850.html  https://blog.csdn.net/qq_34035425/article/details/85001347  arr.sort()
+      // https://www.jb51.net/article/176903.htm   去重的12种方法
+      // 数组去重
+      // let arr = [1, 1, 2, 3, 3, 5, 2, 1, 4, 9, 4];
+      // const fn1 = (arr) => {
+      //   let arr1 = [...arr];
+      //   for (var i = 0; i < arr.length; i++) {
+      //     for (var j = i + 1; j < arr.length; j++) {
+      //       if (arr[j] === arr[i]) delete arr1[j];
+      //     }
+      //   }
+      //   return arr1.filter(Boolean);
+      // };
+
+      // const fn2 = (arr) => {
+      //   let arr1 = [...arr].sort((a, b) => a - b);
+      //   let arr2 = [...arr1];
+      //   arr1.map((item, index) => {
+      //     if (item === arr1[index + 1]) delete arr2[index + 1];
+      //   });
+      //   return arr2.filter(Boolean);
+      // };
+      // console.info(fn2(arr));
+
+      // *************************************************************************************************************************
+
+      // 1.  利用ES6 Set去重（ES6中最常用）
+      // 不考虑兼容性，这种去重的方法代码最少。这种方法还无法去掉“{}”空对象，后面的高阶方法会添加去掉重复“{}”的方法。
+      // const unique = (arr) => Array.from(new Set(arr));
+
+      // 2.  基本同上
+      // const unique = (arr) => [...new Set(arr)];
+
+      // 3.  利用归并reduce+includes
+      // const unique = (arr) =>
+      //   arr.reduce(
+      //     (prev, cur) => (prev.includes(cur) ? prev : [...prev, cur]),
+      //     []
+      //   );
+
+      // 4.  利用indexOf去重
+      // const unique = (arr) => {
+      //   if (!Array.isArray(arr)) {
+      //     console.log("type error!");
+      //     return;
+      //   }
+      //   var array = [];
+      //   arr.forEach((item) => {
+      //   if (array.indexOf(item) === -1) array.push(item);
+      //   });
+      //   return array;
+      // };
+
+      // 5.   利用includes去重
+      // const unique = (arr) => {
+      //   if (!Array.isArray(arr)) {
+      //     console.log("type error!");
+      //     return;
+      //   }
+      //   var array = [];
+      //   arr.forEach((item) => {
+      //   if (array.includes(item) === -1) array.push(item);
+      //   });
+      //   return array;
+      // };
+
+      // 6.  利用对象的属性不能相同的特点进行去重（这种数组去重的方法有问题，不建议用，有待改进）
+      // const unique = (arr) => {
+      //   if (!Array.isArray(arr)) {
+      //     console.log("type error!");
+      //     return;
+      //   }
+      //   var array = [];
+      //   var obj = {};
+      //   arr.forEach((item) => {
+      //     if (!obj[item]) {
+      //       array.push(item);
+      //       obj[item] = true;
+      //     }
+      //   });
+      //   return array;
+      // };
+
+      // 7.  利用for嵌套for，然后splice去重（ES5中最常用）
+      // const unique = (arr) => {
+      //   for (var i = 0; i < arr.length; i++) {
+      //     // 找当前项后边的是否有重复的
+      //     for (var j = i + 1; j < arr.length; j++) {
+      //       if (arr[i] == arr[j]) {
+      //         //第一个等同于第二个，splice方法删除第二个
+      //         arr.splice(j, 1);
+      //         j--;
+      //       }
+      //     }
+      //   }
+      //   return arr;
+      // };
+
+      // 8.  利用sort()
+      // const unique = (arr) => {
+      //   if (!Array.isArray(arr)) {
+      //     console.log("type error!");
+      //     return;
+      //   }
+      //   arr.sort();
+      //   var array = [arr[0]];
+      //   arr.forEach((item, index) => {
+      //     if (item !== arr[index - 1] && index >= 1) array.push(item);
+      //   });
+      //   return array;
+      // };
+
+      // 9.  利用filter   遍历arr,寻找当前项，如果第一个找到的就是这个，就返回出去，不是第一个就不返回
+      // const unique = (arr) =>
+      //   arr.filter((item, index) => arr.indexOf(item) === index);
+
+      // 10.  利用递归
+      // const unique = (arr) => {
+      //   if (!Array.isArray(arr)) {
+      //     console.log("type error!");
+      //     return;
+      //   }
+      //   var array = [...arr];
+      //   var len = array.length;
+      //   array.sort((a, b) => a - b);
+      //   function loop(index) {
+      //     if (index >= 1) {
+      //       if (array[index] === array[index - 1]) {
+      //         array.splice(index, 1);
+      //       }
+      //       loop(index - 1); //递归loop，然后数组去重
+      //     }
+      //   }
+      //   loop(len - 1);
+      //   return array;
+      // };
+
+      // 11.  利用Map数据结构去重
+      // const unique = (arr) => {
+      //   if (!Array.isArray(arr)) {
+      //     console.log("type error!");
+      //     return;
+      //   }
+      //   let map = new Map();
+      //   let array = new Array(); // 数组用于返回结果
+      //   for (let i = 0; i < arr.length; i++) {
+      //     if (map.has(arr[i])) {
+      //       // 如果有该key值
+      //       map.set(arr[i], true);
+      //     } else {
+      //       map.set(arr[i], false); // 如果没有该key值
+      //       array.push(arr[i]);
+      //     }
+      //   }
+      //   return array;
+      // };
+
+      // 12.  利用hasOwnProperty
+      // const unique = (arr) => {
+      //   if (!Array.isArray(arr)) {
+      //     console.log("type error!");
+      //     return;
+      //   }
+      //   var obj = {};
+      //   return arr.filter(function (item, index, arr) {
+      //     return obj.hasOwnProperty(typeof item + item)
+      //       ? false
+      //       : (obj[typeof item + item] = true);
+      //   });
+      // };
+
+      var arr = [
+        1,
+        1,
+        "true",
+        "true",
+        true,
+        true,
+        15,
+        15,
+        false,
+        false,
+        undefined,
+        undefined,
+        null,
+        null,
+        NaN,
+        NaN,
+        "NaN",
+        0,
+        0,
+        "a",
+        "a",
+        {},
+        {},
+      ];
+      console.log(unique(arr));
+      //  //[1, "true", true, 15, false, undefined, null, NaN, "NaN", 0, "a", {}, {}]
+    </script>
+  </body>
+</html>
