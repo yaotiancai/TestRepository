@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>行：<input type="text" id="row" /></p>
+    <p>列：<input type="text" id="column" /></p>
+    <p><input type="button" id="btn" value="创建" /></p>
+    <div id="container"></div>
+    <script>
+      const row = document.querySelector("#row");
+      const column = document.querySelector("#column");
+      const btn = document.querySelector("#btn");
+      const container = document.querySelector("#container");
+      function random(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+      }
+      function delRow() {
+        this.parentElement.parentElement.remove();
+      }
+
+      function getColor() {
+        let color = "#";
+        let str = "0123456789abcdef";
+        for (var i = 0; i < 6; i++) {
+          color += str.charAt(random(0, 15));
+        }
+        return color;
+      }
+
+      let table = null;
+
+      function createTable() {
+        if (table) table.remove();
+        const rowVal = row.value;
+        const colVal = column.value;
+        table = document.createElement("table");
+        table.border = 1;
+        for (var i = 0; i < rowVal; i++) {
+          const tr = document.createElement("tr");
+          for (var j = 0; j < colVal; j++) {
+            const td = document.createElement("td");
+            td.innerHTML = random(0, 100);
+            td.style.backgroundColor = getColor();
+            tr.appendChild(td);
+          }
+          const del = document.createElement("td");
+          del.innerHTML = '<input type="button" value="删除" class="del"/>';
+          tr.appendChild(del);
+          table.appendChild(tr);
+        }
+        container.appendChild(table);
+
+        const dels = document.querySelectorAll(".del");
+        for (var j = 0; j < dels.length; j++) {
+          dels[j].onclick = delRow;
+        }
+      }
+
+      btn.onclick = createTable;
+    </script>
+  </body>
+</html>
