@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="./images//me.jpg" type="image/x-icon" />
+  </head>
+  <body>
+    <!--  里边包含图片的话，只会显示canvas大小的部分，css样式优先控制，最终显示的大小为CSS设置的-->
+    <canvas id="myCanvas" width="800" height="600">hahah</canvas>
+    <!-- <video src="./videos/mov_bbb.mp4" controls></video> -->
+  </body>
+  <script type="text/javascript">
+    // 画布对象
+    // let canvas = document.querySelector("#myCanvas");
+    // 上下文对象，画笔
+    // let ctx = canvas.getContext("2d");
+    // // 绘制路径
+    // ctx.rect(100, 100, 300, 300);
+    // // 画笔颜色
+    // ctx.fillStyle = "red";
+    // // 填充
+    // ctx.fill();
+    // // 描边，渲染路径
+    // // 边框颜色
+    // ctx.strokeStyle = "aqua";
+    // // 边框宽度
+    // ctx.lineWidth = "10";
+    // // 描边
+    // ctx.stroke();
+
+    // // 防止连笔;
+    // ctx.beginPath();
+    // // 移动到该点
+    // ctx.moveTo(400, 200);
+    // // 由起点划线到目标点
+    // ctx.lineTo(400, 400);
+    // ctx.lineTo(600, 200);
+    // ctx.lineTo(600, 400);
+    // // ctx.closePath();
+
+    // // // 线条结束端点的样式  圆角round，出头  平角butt，不出头  方角square，出头
+    // ctx.lineCap = "round";
+    // // 线条拐点的样式  圆角round  斜角miter 斜切角bevel
+    // ctx.lineJoin = "miter";
+    // // 拐角斜接长度  角度很尖才能显示效果 123
+    // ctx.miterLimit = 2;
+    // ctx.strokeStyle = "red";
+    // ctx.lineWidth = 10;
+    // // 边框
+    // ctx.stroke();
+    // ctx.fillStyle = "red";
+    // ctx.fill();
+
+    // 圆环
+    // ctx.beginPath();
+    // // // 画圆  起始坐标x,y  半径r  弧度变化 0到2PI为整圆  默认false 顺时针  可省略
+    // ctx.arc(400, 200, 100, 0, 2 * Math.PI);
+    // // ctx.lineTo(460, 200);
+    // ctx.arc(400, 200, 90, 0, 2 * Math.PI, true);
+    // ctx.closePath();
+    // ctx.fillStyle = "aqua";
+    // ctx.fill();
+    // ctx.strokeStyle = "transparent";
+    // let img = new Image();
+    // img.src = "./images/me.jpg";
+    // img.onload = function () {
+    //   // context.drawImage(img,x,y);
+    //   // context.drawImage(img,x,y,width,height);
+    //   // context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+    //   // 图片 源文件由哪开始切sx,sy  源文件切多少swidth,sheight  目标图片开始坐标x,y 目标图片大小width,height
+    //   ctx.drawImage(img, 320, 120, 160, 160);
+    // };
+
+    // 字体大小 字体
+    // ctx.font = "50px 微软雅黑";
+    // // 模糊度
+    // ctx.shadowBlur = "20";
+    // // // 阴影颜色
+    // ctx.shadowColor = "rgba(0,0,0,0.5)";
+    // // // 偏移值
+    // ctx.shadowOffsetX = 90;
+    // ctx.shadowOffsetY = 30;
+
+    // // 填充文本  开始位置
+    // ctx.fillText("hellowWorld", 100, 100);
+    // // 边框文本 虚框
+    // ctx.strokeText("你好世界", 100, 200);
+
+    // let x = 600;
+    // setInterval(() => {
+    //   x -= 3;
+    //   ctx.clearRect(0, 0, 1200, 400);
+    //   // 填充文本  开始位置
+    //   ctx.fillText("hellowWorld", x, 100);
+    //   // 边框文本 虚框
+    //   ctx.strokeText("哈哈哈", x, 200);
+    // }, 16);
+
+    // let color = ctx.createLinearGradient(0, 0, 300, 0);
+
+    // color.addColorStop(0.33, "#01009c");
+    // color.addColorStop(0.33, "white");
+    // color.addColorStop(0.66, "white");
+    // color.addColorStop(0.66, "red");
+    // color.addColorStop(1, "red");
+    // ctx.fillStyle = color;
+    // ctx.fillRect(0, 0, 300, 200);
+
+    // var radgrad = ctx.createRadialGradient(250, 250, 0, 250, 250, 150);
+    // radgrad.addColorStop(0, "#ff0000");
+    // radgrad.addColorStop(0.15, "#ffccff");
+    // radgrad.addColorStop(0.3, "#ffff00");
+    // radgrad.addColorStop(0.45, "#00ff00");
+    // radgrad.addColorStop(0.6, "#ccffcc");
+    // radgrad.addColorStop(0.75, "blue");
+    // radgrad.addColorStop(1, "purple");
+    // ctx.fillStyle = radgrad;
+
+    // ctx.fillRect(100, 100, 300, 300);
+    // 边框
+    // ctx.stroke();
+    // ctx.fillStyle = "red";
+    // ctx.fill();
+
+    // 视频+弹幕
+    // const canvas = document.querySelector("#myCanvas");
+    // const ctx = canvas.getContext("2d");
+    // const video = document.querySelector("video");
+    // video.addEventListener("play", playHandler);
+    // video.addEventListener("pause", pauseHandler);
+    // let timer;
+    // let x = 340;
+    // function playHandler() {
+    //   timer = setInterval(() => {
+    //     ctx.clearRect(0, 0, 400, 300);
+    //     ctx.fillRect(0, 0, 400, 300);
+    //     ctx.drawImage(video, 0, 30, 400, 240);
+    //     ctx.shadowBlur = 1;
+    //     ctx.shadowColor = "#ccc";
+    //     ctx.shadowOffsetX = 1;
+    //     ctx.shadowOffsetY = 1;
+    //     ctx.font = "18px 微软雅黑";
+    //     x -= 1;
+    //     if (x < -10) x = 340;
+    //     ctx.strokeText("可以的", x, 80);
+    //   }, 16);
+    // }
+    // function pauseHandler() {
+    //   clearInterval(timer);
+    // }
+
+    // const canvas = document.querySelector("#myCanvas");
+    // const ctx = canvas.getContext("2d");
+    // const img = new Image();
+    // img.src = "./images/ssk.jpg";
+    // img.onload = function () {
+    //   ctx.drawImage(img, 0, 0);
+    //   let imgageDta = ctx.getImageData(0, 0, 320, 1);
+    //   console.log(imgageDta);
+    // };
+    // console.log(canvas, ctx);
+
+    // const canvas = document.querySelector("#myCanvas");
+    // const ctx = canvas.getContext("2d");
+    // ctx.fillRect(0, 0, 300, 100);
+    // 缩放
+    // ctx.scale(0.5, 0.5);
+    // ctx.fillRect(0, 0, 300, 100);
+    // // 移动到哪个点
+    // ctx.translate(300, 300);
+    // ctx.fillRect(0, 0, 300, 100);
+    // 旋转 弧度
+    // ctx.rotate(Math.PI / 4);
+    // ctx.fillRect(0, 0, 300, 100);
+
+    // console.log(canvas, ctx);
+
+    // 钟表
+    const canvas = document.querySelector("#myCanvas");
+    const ctx = canvas.getContext("2d");
+    ctx.translate(375, 275);
+    ctx.rotate(-Math.PI / 4);
+    ctx.save();
+
+    ctx.beginPath();
+    ctx.arc(0, 0, 100, 0, Math.PI * 2);
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = "darkgrey";
+    // ctx.fillStyle = "#f0f0f0";
+    // ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+
+    // 绘制分钟秒钟刻度
+    for (let i = 0; i < 60; i++) {
+      ctx.beginPath();
+      ctx.rotate(Math.PI / 30);
+      ctx.moveTo(95, 0);
+      ctx.lineTo(80, 0);
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = "pink";
+      ctx.stroke();
+      ctx.closePath();
+    }
+    ctx.restore();
+    ctx.save();
+    // 绘制时钟刻度
+    for (let i = 0; i < 12; i++) {
+      ctx.beginPath();
+      ctx.rotate(Math.PI / 6);
+      ctx.moveTo(100, 0);
+      ctx.lineTo(80, 0);
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = "darkGrey";
+      ctx.stroke();
+      ctx.closePath();
+    }
+    ctx.restore();
+    // ctx.save();
+
+    const date = new Date();
+    const second = date.getSeconds();
+    const minute = date.getMinutes();
+    let hour = date.getHours();
+    if (hour > 12) hour -= 12;
+    console.log(second, minute, hour);
+
+    // ctx.restore();
+    ctx.beginPath();
+    ctx.rotate(((2 * Math.PI) / 60) * second);
+    ctx.moveTo(0, 0);
+    ctx.lineTo(70, 0);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+    ctx.closePath();
+
+    // setInterval(() => {
+    //   const date = new Date();
+
+    //   // ctx.clearRect(0, 0, 800, 600);
+    //   const second = date.getSeconds();
+    //   const minute = date.getMinutes();
+    //   let hour = date.getHours();
+    //   if (hour > 12) hour -= 12;
+    //   console.log(second, minute, hour);
+
+    //   ctx.restore();
+    //   ctx.beginPath();
+    //   ctx.rotate(((2 * Math.PI) / 60) * second);
+    //   ctx.moveTo(0, 0);
+    //   ctx.lineTo(70, 0);
+    //   ctx.lineWidth = 1;
+    //   ctx.strokeStyle = "red";
+    //   ctx.stroke();
+    //   ctx.closePath();
+
+    //   // ctx.beginPath();
+    //   // ctx.rotate((minute * Math.PI) / 180);
+    //   // ctx.moveTo(0, 0);
+    //   // ctx.lineTo(-60, 10);
+    //   // ctx.lineWidth = 1;
+    //   // ctx.strokeStyle = "blue";
+    //   // ctx.stroke();
+    //   // ctx.closePath();
+
+    //   // ctx.beginPath();
+    //   // ctx.rotate((hour * Math.PI) / 6);
+    //   // ctx.moveTo(0, 0);
+    //   // ctx.lineTo(30, -50);
+    //   // ctx.lineWidth = 1;
+    //   // ctx.strokeStyle = "#000";
+    //   // ctx.stroke();
+    //   // ctx.closePath();
+    // }, 1000);
+
+    // console.log(canvas, ctx, second, minute, hour);
+  </script>
+</html>

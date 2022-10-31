@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set集合</title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      // Set 对象允许你存储任何类型的唯一值，无论是原始值或者是对象引用。
+      // Set对象是值的集合，你可以按照插入的顺序迭代它的元素。 Set中的元素只会出现一次，即 Set 中的元素是唯一的。
+
+      // NaN和undefined都可以被存储在Set 中， NaN之间被视为相同的值（NaN被认为是相同的，尽管 NaN !== NaN）。
+
+      // Constructor
+      // Set()
+      // 创建一个新的Set对象。
+
+      // Set.prototype.size
+      // 返回 Set 对象中的值的个数
+
+      // Set.prototype.add(value)
+      // 在Set对象尾部添加一个元素。返回该Set对象。
+
+      // Set.prototype.clear()
+      // 移除Set对象内的所有元素。
+
+      // Set.prototype.delete(value);
+      // 移除Set中与这个值相等的元素，返回Set.prototype.has(value)在这个操作前会返回的值（即如果该元素存在，返回true，否则返回false）。
+      // Set.prototype.has(value)在此后会返回false。
+
+      // Set.prototype.entries()
+      // 返回一个新的迭代器对象，该对象包含Set对象中的按插入顺序排列的所有元素的值的[value, value]数组。为了使这个方法和Map对象保持相似， 每个值的键和值相等。
+
+      // Set.prototype.forEach(callbackFn[, thisArg])
+      // 按照插入顺序，为Set对象中的每一个值调用一次callBackFn。如果提供了thisArg参数，回调中的this会是这个参数。
+
+      // Set.prototype.has(value)
+      // 返回一个布尔值，表示该值在Set中存在与否。
+
+      // Set.prototype.keys()
+      // 与values()方法相同，返回一个新的迭代器对象，该对象包含Set对象中的按插入顺序排列的所有元素的值。
+
+      // Set.prototype.values()
+      // 返回一个新的迭代器对象，该对象包含Set对象中的按插入顺序排列的所有元素的值。
+
+      // Set.prototype[@@iterator]()
+      // 返回一个新的迭代器对象，该对象包含Set对象中的按插入顺序排列的所有元素的值。
+
+      // 迭代整个set    for...of、forEach遍历
+      // 按顺序输出：1, "some text", {"a": 1, "b": 2}, {"a": 1, "b": 2}
+      // for (let item of mySet) console.log(item);
+
+      // 按顺序输出：1, "some text", {"a": 1, "b": 2}, {"a": 1, "b": 2}
+      // for (let item of mySet.keys()) console.log(item);
+
+      // 按顺序输出：1, "some text", {"a": 1, "b": 2}, {"a": 1, "b": 2}
+      // for (let item of mySet.values()) console.log(item);
+
+      // 按顺序输出：1, "some text", {"a": 1, "b": 2}, {"a": 1, "b": 2}
+      //(键与值相等)
+      // for (let [key, value] of mySet.entries()) console.log(key);
+
+      // 使用 Array.from 转换Set为Array
+      // var myArr = Array.from(mySet); // [1, "some text", {"a": 1, "b": 2}, {"a": 1, "b": 2}]
+
+      // 如果在HTML文档中工作，也可以：
+      // mySet.add(document.body);
+      // mySet.has(document.querySelector("body")); // true
+
+      // Set 和 Array互换
+      // mySet2 = new Set([1, 2, 3, 4]);
+      // mySet2.size;               // 4
+      // [...mySet2];               // [1,2,3,4]
+
+      // 可以通过如下代码模拟求交集
+      // let intersection = new Set([...set1].filter(x => set2.has(x)));
+
+      // 可以通过如下代码模拟求差集
+      // let difference = new Set([...set1].filter(x => !set2.has(x)));
+
+      // 用forEach迭代
+      // mySet.forEach(function(value) {
+      //   console.log(value);
+      // });
+      // 1
+      // 2
+      // 3
+      // 4
+
+      // 各种基本方法
+
+      // 判断set是否包含subset, 是否是subset的父集
+      // function isSuperset(set, subset) {
+      //   for (let elem of subset) {
+      //     if (!set.has(elem)) {
+      //       return false;
+      //     }
+      //   }
+      //   return true;
+      // }
+
+      // A和B的并集，结合两者所有元素，并去重
+      // function union(setA, setB) {
+      //   let _union = new Set(setA);
+      //   for (let elem of setB) {
+      //     _union.add(elem);
+      //   }
+      //   return _union;
+      // }
+
+      // A和B的交集，挑出两者共有元素
+      // function intersection(setA, setB) {
+      //   let _intersection = new Set();
+      //   for (let elem of setB) {
+      //     if (setA.has(elem)) {
+      //       _intersection.add(elem);
+      //     }
+      //   }
+      //   return _intersection;
+      // }
+
+      // A和B的交集的补集，两者共有元素的剩余元素，仅存在于一方的元素
+      // function symmetricDifference(setA, setB) {
+      //   let _difference = new Set(setA);
+      //   for (let elem of setB) {
+      //     if (_difference.has(elem)) {
+      //       _difference.delete(elem);
+      //     } else {
+      //       _difference.add(elem);
+      //     }
+      //   }
+      //   return _difference;
+      // }
+
+      // A里边剔除属于B的元素，return A里独有的
+      // function difference(setA, setB) {
+      //   let _difference = new Set(setA);
+      //   for (let elem of setB) {
+      //     _difference.delete(elem);
+      //   }
+      //   return _difference;
+      // }
+
+      // //Examples
+      // let setA = new Set([1, 2, 3, 4]),
+      //   setB = new Set([2, 3]),
+      //   setC = new Set([3, 4, 5, 6]);
+
+      // isSuperset(setA, setB); // => true
+      // union(setA, setC); // => Set [1, 2, 3, 4, 5, 6]
+      // intersection(setA, setC); // => Set [3, 4]
+      // symmetricDifference(setA, setC); // => Set [1, 2, 5, 6]
+      // difference(setA, setC); // => Set [1, 2]
+
+      // Array、Set互换
+
+      // let myArray = ["value1", "value2", "value3"];
+      // Array转换为Set
+      // let mySet = new Set(myArray);
+      // mySet.has("value1"); // return true
+
+      // Set转换为Array
+      // console.log([...mySet]); // 与myArray完全一致
+
+      // 数组去重
+      // console.log([...new Set(numbers)]);
+
+      // String 将String的每一项依次化为set的每一项
+      // let text = "India";
+      // let mySet = new Set(text); // Set {'I', 'n', 'd', 'i', 'a'}
+
+      const setA = new Set();
+
+      setA.add(1);
+      setA.add("2");
+      setA.add("2");
+      setA.add({ a: 1, b: 2 });
+      // 对象依然会填进去
+      setA.add({ a: 1, b: 2 });
+
+      // 里边没5,没那个对象，返回false
+      // console.info("setA.delete({a: 1, b: 2})", setA.delete({ a: 1, b: 2 }));
+
+      console.info("setA", setA);
+
+      // false 对象各不相同
+      // console.info("setA.has({ a: 1, b: 2 });", setA.has({ a: 1, b: 2 }));
+      // console.info("setA.size", setA.size);
+
+      // SetIterator {1 => 1, "2" => "2", {…} => {…}, {…} => {…}}
+      console.info("setA.entries()", setA.entries());
+    </script>
+  </body>
+</html>

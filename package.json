@@ -1,0 +1,23 @@
+{
+  "name": "testrepository",
+  "version": "1.0.0",
+  "description": "测试仓库",
+  "main": "index.js",
+  "dependencies": {
+    "antd": "^4.6.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaotiancai/TestRepository.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yaotiancai/TestRepository/issues"
+  },
+  "homepage": "https://github.com/yaotiancai/TestRepository#readme"
+}

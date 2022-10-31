@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>数组去重的12种方法</title>
   </head>
   <body>
     <script>
@@ -37,7 +37,7 @@
       // 不考虑兼容性，这种去重的方法代码最少。这种方法还无法去掉“{}”空对象，后面的高阶方法会添加去掉重复“{}”的方法。
       // const unique = (arr) => Array.from(new Set(arr));
 
-      // 2.  基本同上
+      // 2.  基本同上, Set()集合中任何一个元素都是唯一的，不允许出现重复，通过这一特性可自动去重
       // const unique = (arr) => [...new Set(arr)];
 
       // 3.  利用归并reduce+includes
